@@ -2,3 +2,15 @@
 *.pdb
 *.ilk
 *.log
+*.obj
+*.idb
+*.exp
+*.manifest
+*.tlog
+*.exe
+.lib
+bdsvr.lib
+bdjob.lib
+monitor.lib
+frontsvr.lib
+
