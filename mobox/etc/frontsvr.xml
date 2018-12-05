@@ -1,0 +1,33 @@
+<?xml version="1.0" ?> 
+<frontsvr>
+	
+<frontend>
+	<port>7120</port>
+</frontend>
+
+<backend>
+	<port>7126</port>
+</backend>
+
+<warnsvr>
+	<ip>127.0.0.1</ip>
+	<port>5433</port>
+</warnsvr>
+
+
+<db>
+	<driver>mysql</driver>
+	<ip>127.0.0.1</ip>
+	<port>3306</port>
+	<name>xxxgw</name>
+	<pwd>Aa123456</pwd>
+	<user>root</user>
+</db>
+
+	
+<log>
+	<type>0</type>		// log_STDOUT = 0; log_SYSLOG = 1; log_FILE = 2;
+</log>
+	
+</frontsvr>
+

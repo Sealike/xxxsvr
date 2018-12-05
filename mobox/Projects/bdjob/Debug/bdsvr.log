@@ -1,0 +1,63 @@
+﻿生成启动时间为 7/27/2017 2:59:06 PM。
+     1>项目“E:\BluetoothProject\smplatform\smplatform\bdsvr\bdsvr.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(364,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D HAVE_CONFIG_H /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt bdexplain.cpp main.cpp
+         bdexplain.cpp
+     1>d:\program files (x86)\microsoft visual studio 12.0\vc\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
+                 d:\program files (x86)\microsoft visual studio 12.0\vc\atlmfc\include\afx.h(33) : 参见“MBCS_Support_Deprecated_In_MFC”的声明
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         正在生成代码...
+         正在编译...
+         main.cpp
+     1>d:\program files (x86)\microsoft visual studio 12.0\vc\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
+                 d:\program files (x86)\microsoft visual studio 12.0\vc\atlmfc\include\afx.h(33) : 参见“MBCS_Support_Deprecated_In_MFC”的声明
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>e:\bluetoothproject\smplatform\smplatform\bdsvr\main.cpp(117): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 12.0\vc\include\time.inl(112) : 参见“localtime”的声明
+         正在生成代码...
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../bin\bdsvr.exe" /INCREMENTAL /NOLOGO BDProtocal.lib connection.lib util.lib mio.lib subst.lib WS2_32.lib libeay32.lib pthreads.lib libmysql.lib /MANIFEST:NO /DEBUG /PDB:"../bin\bdsvr.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../bin\bdsvr.lib" /MACHINE:X86 Debug\ChnavtectGlobal.obj
+         Debug\bdexplain.obj
+         Debug\ComConnection.obj
+         Debug\GeneralConnection.obj
+         Debug\global.obj
+         Debug\main.obj
+         Debug\buffer.obj
+         Debug\authcallback.obj
+         Debug\expat_auth.obj
+         Debug\expat_router.obj
+         Debug\Instance.obj
+         Debug\p2p.obj
+         Debug\routercallback.obj
+         Debug\dispatch.obj
+         Debug\expat.obj
+         Debug\instapp.obj
+         Debug\cJSON.obj
+         Debug\p2pclient.obj
+         Debug\protobuffer.obj
+         Debug\responsepkt.obj
+         Debug\stdafx.obj
+         Debug\tool.obj
+            正在创建库 ../bin\bdsvr.lib 和对象 ../bin\bdsvr.exp
+     1>util.lib(config.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(config.obj)”或在“E:\BluetoothProject\smplatform\smplatform\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(hex.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(hex.obj)”或在“E:\BluetoothProject\smplatform\smplatform\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(inaddr.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(inaddr.obj)”或在“E:\BluetoothProject\smplatform\smplatform\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(jqueue.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(jqueue.obj)”或在“E:\BluetoothProject\smplatform\smplatform\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(log.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(log.obj)”或在“E:\BluetoothProject\smplatform\smplatform\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(nad.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(nad.obj)”或在“E:\BluetoothProject\smplatform\smplatform\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(pool.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(pool.obj)”或在“E:\BluetoothProject\smplatform\smplatform\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(str.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(str.obj)”或在“E:\BluetoothProject\smplatform\smplatform\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(xhash.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(xhash.obj)”或在“E:\BluetoothProject\smplatform\smplatform\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>subst.lib(inet_aton.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“subst.lib(inet_aton.obj)”或在“E:\BluetoothProject\smplatform\smplatform\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>subst.lib(snprintf.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“subst.lib(snprintf.obj)”或在“E:\BluetoothProject\smplatform\smplatform\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>subst.lib(strndup.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“subst.lib(strndup.obj)”或在“E:\BluetoothProject\smplatform\smplatform\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>subst.lib(syslog.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“subst.lib(syslog.obj)”或在“E:\BluetoothProject\smplatform\smplatform\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+         bdsvr.vcxproj -> E:\BluetoothProject\smplatform\smplatform\bdsvr\../bin\bdsvr.exe
+     1>已完成生成项目“E:\BluetoothProject\smplatform\smplatform\bdsvr\bdsvr.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.44

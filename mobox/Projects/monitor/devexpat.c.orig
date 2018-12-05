@@ -1,0 +1,523 @@
+<<<<<<< HEAD
+#include <stdlib.h>
+#include <string.h>
+
+#include "devexpat.h"
+#include "client.h"
+#include "p2p.h"
+#include "mcuauth.h"
+#include "protobuffer.h"
+
+#define NULL     0
+#define HEADLEN  4
+#define _COUNT   1
+#define FALSE    0
+#define TRUE     1
+
+static unsigned char g_title[4] ={0xFE,0xFE,0xFE,0xFE};
+
+enum {
+	PACK_UNSEARCHED = 0,
+	PACK_SEARCHED,
+	PACK_STILLDATA,
+	PACK_UNFINISHED,
+	PACK_FINISHED,
+};
+
+enum {
+	SEARCHMACHINE_NULL = 0,
+	SEARCH_GETHEAD,
+	SEARCH_GETDATA,
+	SEARCH_GETCHECK,
+	SEARCHMACHINE_BEGININD,
+	SEARCHMACHINE_IDENTIFIER,
+	SEARCHMACHINE_LENGTH,
+	SEARCHMACHINE_BINARYCHECK,
+};
+
+#define ISLCHAR(w)     (w>='a'&&w<='z')
+#define ISHCHAR(w)     (w>='A'&&w<='Z')
+#define ISDIGIT(w)     (w>='0'&&w<='9')
+#define ISCHAR(w)       (ISDIGIT(w)|| ISLCHAR(w)||ISHCHAR(w))
+
+#define NULLReturn(condition , rtnval)      {if((condition) == NULL)  return rtnval;}
+#define FALSEReturn(condition, rtnval)      {if((condition) == FALSE) return rtnval;}
+#define TRUEReturn(condition , rtnval)      {if((condition) == TRUE)  return rtnval;}
+
+#define  _msgtype_pos  7
+#define  _msgcode_pos  8
+#define  _senceid_pos  9
+#define  _mcuid_pos   10
+#define  _message_pos 11
+
+#define _type_mcu2server  0x01
+#define _type_server2mcu  0x02
+
+#define _code_mcu_auth      0x01
+#define _code_mcudata       0x02
+#define _code_server_req    0x03
+#define _code_mcu_query     0x04
+#define _code_mcu_state     0x04
+#define _code_mcu_config    0x05
+#define _code_time_sync     0x06
+#define _code_ping          0x07
+#define _code_extended      0xA1
+
+static int search_frame(dev_exp_t explain,uchar*p,int len,int* searchpos);
+static int explain(dev_exp_t exp,uchar*frame,int len);
+
+static int istitle(uchar* str)
+{
+	int rtn = 0;
+	int i   = 0 ;
+
+	if(str == 0) return 0;
+
+	for(; i < _COUNT ; i++)
+	{
+		if(memcmp(g_title,str,4) == 0)		
+			break;		
+	}
+
+	if(i < _COUNT)
+		return 1;
+	else
+		return 0;
+}
+
+dev_exp_t dev_exp_new(void* param)
+{
+	dev_exp_t rtn = NULL;
+
+	while((rtn = (dev_exp_t)calloc(1,sizeof(dev_exp_st))) == NULL);
+
+	_BASE(rtn).framelen = 0;
+	_BASE(rtn).m_cb = NULL;
+	_BASE(rtn).searchstatus = SEARCHMACHINE_NULL;
+	_BASE(rtn).param = param;
+	_BASE(rtn).search= search_frame;
+	_BASE(rtn).explain = explain;
+
+	return rtn;
+}
+
+void    dev_exp_free(dev_exp_t exp)
+{
+	if(exp)
+		free(exp);
+}
+
+//////////////////////////////////////////////////////////////////////////
+static int search_frame(dev_exp_t explain,uchar*p,int len,int* searchpos)
+{
+	int dwCurrPt = 0 ;
+	uchar ch;
+	_exp_t exp = &_BASE(explain);
+
+	for(; dwCurrPt<len; dwCurrPt++)
+	{
+		ch = p[dwCurrPt];
+
+		switch(exp->searchstatus)
+		{
+		case SEARCHMACHINE_NULL:	//  0: $
+			{
+				exp->Head[exp->HeadPtr++]     = ch;
+				if(exp->HeadPtr == HEADLEN)
+				{//搜索头部
+					exp->Head[HEADLEN] = '\0';
+					if(istitle(exp->Head))
+					{
+						int c = 0;
+						exp->searchstatus = SEARCHMACHINE_IDENTIFIER;
+						memcpy(exp->frame,exp->Head,HEADLEN);						
+
+						exp->framelen = HEADLEN;
+						exp->HeadPtr = 0;
+						explain->checksum = 0;
+						for(; c < HEADLEN ; c++)
+							explain->checksum ^= exp->Head[c];
+						continue;
+					}else
+					{
+						int i = 1;
+						for(; i<HEADLEN;i++)
+						{
+							if(exp->Head[i] == 0xFE)
+								break;
+						}
+
+						if(i<HEADLEN)
+						{
+							int j = 0 ;
+							for(; j < HEADLEN-i ; j++)
+								exp->Head[j] = exp->Head[j+i];
+
+							exp->HeadPtr -= i;
+						}else
+							exp->HeadPtr  = 0;
+
+						exp->searchstatus = SEARCHMACHINE_NULL;
+					}
+				}
+			}
+			break;		
+
+		case SEARCHMACHINE_IDENTIFIER:
+			{
+				exp->frame[exp->framelen] = ch;
+				exp->framelen ++;
+				explain->checksum ^= ch;
+
+				if(exp->framelen == 7){
+					explain->indlen = (exp->frame[5]<<8)+exp->frame[6];
+					explain->indlen+=8;
+					if((explain->indlen) >= (UNPACKBUFFSIZE-1)){
+						exp->searchstatus = SEARCHMACHINE_NULL;
+						continue;
+					}
+				}
+
+				if(exp->framelen >= UNPACKBUFFSIZE-1)
+				{
+					exp->searchstatus = SEARCHMACHINE_NULL;
+					continue;
+				}
+
+				//end part..
+				if(exp->framelen == explain->indlen)
+				{
+					if(explain->checksum != 0){
+						exp->searchstatus = SEARCHMACHINE_NULL;
+						continue;
+					}
+
+					if(dwCurrPt==(len-1))
+					{//找到完整的一帧数据,且缓冲区中只有一帧数据
+						*searchpos = dwCurrPt;
+						dwCurrPt=0;
+						exp->searchstatus=SEARCHMACHINE_NULL;//added 2002-09-04 23:06						
+						return PACK_FINISHED;
+					}else{//完整一帧数据取完后,还有其它帧的数据
+						*searchpos = dwCurrPt;
+						exp->searchstatus=SEARCHMACHINE_NULL;			
+						return PACK_STILLDATA;
+					}
+				}
+			}
+			break;
+		default://默认状态
+			exp->searchstatus=SEARCHMACHINE_NULL;
+		}
+	}
+	dwCurrPt=0;
+	//一帧数据未接收完(SearchMachine=SEARCHMACHINE_LENGTH,下次进入时有用)
+	if(exp->searchstatus == SEARCHMACHINE_NULL)
+		return PACK_UNSEARCHED;
+	else
+		return PACK_UNFINISHED;
+}
+
+static int   explain(dev_exp_t exp,uchar*frame,int len)
+{
+	int  version;
+	sess_t sess;
+	p2p_t  p2p;
+	int  msgtype;
+	int  sence;
+	int  mcuid;
+	int  msgcode = 0;
+	int  msgt = 0;
+	NULLReturn(frame,0);
+	NULLReturn(exp,0);		
+
+	version= frame[4];
+	msgtype= frame[7];
+	msgcode= frame[_msgcode_pos];
+	
+	if(msgtype == _type_mcu2server){
+		if(_code_mcudata == msgcode)
+		{
+			msgt = _type_mcu2server<<8|_code_mcudata;
+		}else if(_code_mcu_auth == msgcode)
+		{
+			msgt = _type_mcu2server<<8|_code_mcu_auth;
+		}else if(_code_mcu_state == msgcode)
+		{//relay
+			msgt = _type_mcu2server<<8|_code_mcu_state;
+		}else if(_code_ping == msgcode)
+		{//
+			msgt = _type_mcu2server<<8|_code_ping;
+		}
+		else if(_code_extended == msgcode)
+		{//
+			msgt = _type_mcu2server<<8|_code_extended;
+		}
+	}
+
+	if(_BASE(exp).m_cb) _BASE(exp).m_cb(msgt,frame,len,exp);
+
+	return 0;
+}
+=======
+#include <stdlib.h>
+#include <string.h>
+
+#include "devexpat.h"
+#include "client.h"
+#include "p2p.h"
+#include "mcuauth.h"
+#include "protobuffer.h"
+
+#define NULL     0
+#define HEADLEN  4
+#define _COUNT   1
+#define FALSE    0
+#define TRUE     1
+
+static unsigned char g_title[4] ={0xFE,0xFE,0xFE,0xFE};
+
+enum {
+	PACK_UNSEARCHED = 0,
+	PACK_SEARCHED,
+	PACK_STILLDATA,
+	PACK_UNFINISHED,
+	PACK_FINISHED,
+};
+
+enum {
+	SEARCHMACHINE_NULL = 0,
+	SEARCH_GETHEAD,
+	SEARCH_GETDATA,
+	SEARCH_GETCHECK,
+	SEARCHMACHINE_BEGININD,
+	SEARCHMACHINE_IDENTIFIER,
+	SEARCHMACHINE_LENGTH,
+	SEARCHMACHINE_BINARYCHECK,
+};
+
+#define ISLCHAR(w)     (w>='a'&&w<='z')
+#define ISHCHAR(w)     (w>='A'&&w<='Z')
+#define ISDIGIT(w)     (w>='0'&&w<='9')
+#define ISCHAR(w)       (ISDIGIT(w)|| ISLCHAR(w)||ISHCHAR(w))
+
+#define NULLReturn(condition , rtnval)      {if((condition) == NULL)  return rtnval;}
+#define FALSEReturn(condition, rtnval)      {if((condition) == FALSE) return rtnval;}
+#define TRUEReturn(condition , rtnval)      {if((condition) == TRUE)  return rtnval;}
+
+#define  _msgtype_pos  7
+#define  _msgcode_pos  8
+#define  _senceid_pos  9
+#define  _mcuid_pos   10
+#define  _message_pos 11
+
+#define _type_mcu2server  0x01
+#define _type_server2mcu  0x02
+
+#define _code_mcu_auth      0x01
+#define _code_mcudata       0x02
+#define _code_server_req    0x03
+#define _code_mcu_query     0x04
+#define _code_mcu_state     0x04
+#define _code_mcu_config    0x05
+#define _code_time_sync     0x06
+#define _code_ping          0x07
+#define _code_extended      0xA1
+
+static int search_frame(dev_exp_t explain,uchar*p,int len,int* searchpos);
+static int explain(dev_exp_t exp,uchar*frame,int len);
+
+static int istitle(uchar* str)
+{
+	int rtn = 0;
+	int i   = 0 ;
+
+	if(str == 0) return 0;
+
+	for(; i < _COUNT ; i++)
+	{
+		if(memcmp(g_title,str,4) == 0)		
+			break;		
+	}
+
+	if(i < _COUNT)
+		return 1;
+	else
+		return 0;
+}
+
+dev_exp_t dev_exp_new(void* param)
+{
+	dev_exp_t rtn = NULL;
+
+	while((rtn = (dev_exp_t)calloc(1,sizeof(dev_exp_st))) == NULL);
+
+	_BASE(rtn).framelen = 0;
+	_BASE(rtn).m_cb = NULL;
+	_BASE(rtn).searchstatus = SEARCHMACHINE_NULL;
+	_BASE(rtn).param = param;
+	_BASE(rtn).search= search_frame;
+	_BASE(rtn).explain = explain;
+
+	return rtn;
+}
+
+void    dev_exp_free(dev_exp_t exp)
+{
+	if(exp)
+		free(exp);
+}
+
+//////////////////////////////////////////////////////////////////////////
+static int search_frame(dev_exp_t explain,uchar*p,int len,int* searchpos)
+{    
+	int dwCurrPt = 0 ;
+	uchar ch;
+	_exp_t exp = &_BASE(explain);
+
+	for(; dwCurrPt<len; dwCurrPt++)
+	{
+		ch = p[dwCurrPt];
+
+		switch(exp->searchstatus)
+		{
+		case SEARCHMACHINE_NULL:	//  0: $
+			{
+				exp->Head[exp->HeadPtr++]     = ch;
+				if(exp->HeadPtr == HEADLEN)
+				{//搜索头部
+					exp->Head[HEADLEN] = '\0';
+					if(istitle(exp->Head))
+					{
+						int c = 0;
+						exp->searchstatus = SEARCHMACHINE_IDENTIFIER;
+						memcpy(exp->frame,exp->Head,HEADLEN);						
+
+						exp->framelen = HEADLEN;
+						exp->HeadPtr = 0;
+						explain->checksum = 0;
+						for(; c < HEADLEN ; c++)
+							explain->checksum ^= exp->Head[c];
+						continue;
+					}else
+					{
+						int i = 1;
+						for(; i<HEADLEN;i++)
+						{
+							if(exp->Head[i] == 0xFE)
+								break;
+						}
+
+						if(i<HEADLEN)
+						{
+							int j = 0 ;
+							for(; j < HEADLEN-i ; j++)
+								exp->Head[j] = exp->Head[j+i];
+
+							exp->HeadPtr -= i;
+						}else
+							exp->HeadPtr  = 0;
+
+						exp->searchstatus = SEARCHMACHINE_NULL;
+					}
+				}
+			}
+			break;		
+
+		case SEARCHMACHINE_IDENTIFIER:
+			{
+				exp->frame[exp->framelen] = ch;
+				exp->framelen ++;
+				explain->checksum ^= ch;
+
+				if(exp->framelen == 7){
+					explain->indlen = (exp->frame[5]<<8)+exp->frame[6];
+					explain->indlen+=8;
+					if((explain->indlen) >= (UNPACKBUFFSIZE-1)){
+						exp->searchstatus = SEARCHMACHINE_NULL;
+						continue;
+					}
+				}
+
+				if(exp->framelen >= UNPACKBUFFSIZE-1)
+				{
+					exp->searchstatus = SEARCHMACHINE_NULL;
+					continue;
+				}
+
+				//end part..
+				if(exp->framelen == explain->indlen)
+				{
+					if(explain->checksum != 0){
+						exp->searchstatus = SEARCHMACHINE_NULL;
+						continue;
+					}
+
+					if(dwCurrPt==(len-1))
+					{//找到完整的一帧数据,且缓冲区中只有一帧数据
+						*searchpos = dwCurrPt;
+						dwCurrPt=0;
+						exp->searchstatus=SEARCHMACHINE_NULL;//added 2002-09-04 23:06						
+						return PACK_FINISHED;
+					}else{//完整一帧数据取完后,还有其它帧的数据
+						*searchpos = dwCurrPt;
+						exp->searchstatus=SEARCHMACHINE_NULL;			
+						return PACK_STILLDATA;
+					}
+				}
+			}
+			break;
+		default://默认状态
+			exp->searchstatus=SEARCHMACHINE_NULL;
+		}
+	}
+	dwCurrPt=0;
+	//一帧数据未接收完(SearchMachine=SEARCHMACHINE_LENGTH,下次进入时有用)
+	if(exp->searchstatus == SEARCHMACHINE_NULL)
+		return PACK_UNSEARCHED;
+	else
+		return PACK_UNFINISHED;
+}
+
+static int   explain(dev_exp_t exp,uchar*frame,int len)
+{
+	int  version;
+	sess_t sess;
+	p2p_t  p2p;
+	int  msgtype;
+	int  sence;
+	int  mcuid;
+	int  msgcode = 0;
+	int  msgt = 0;
+	NULLReturn(frame,0);
+	NULLReturn(exp,0);		
+
+	version= frame[4];
+	msgtype= frame[7];
+	msgcode= frame[_msgcode_pos];
+	
+	if(msgtype == _type_mcu2server){
+		if(_code_mcudata == msgcode)
+		{
+			msgt = _type_mcu2server<<8|_code_mcudata;
+		}else if(_code_mcu_auth == msgcode)
+		{
+			msgt = _type_mcu2server<<8|_code_mcu_auth;
+		}else if(_code_mcu_state == msgcode)
+		{//relay
+			msgt = _type_mcu2server<<8|_code_mcu_state;
+		}else if(_code_ping == msgcode)
+		{//
+			msgt = _type_mcu2server<<8|_code_ping;
+		}
+		else if(_code_extended == msgcode)
+		{//
+			msgt = _type_mcu2server<<8|_code_extended;
+		}
+	}
+
+	if(_BASE(exp).m_cb) _BASE(exp).m_cb(msgt,frame,len,exp);
+
+	return 0;
+}
+>>>>>>> 164a8f43f9314a3d92df73e52125e01e5b24af45

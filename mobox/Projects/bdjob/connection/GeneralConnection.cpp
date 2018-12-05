@@ -1,0 +1,47 @@
+#include "GeneralConnection.h"
+
+//////////////////////////////////////////////////////////////////////////
+//通用连接实现文件
+//created
+// by lxl
+//2013-09-09
+//////////////////////////////////////////////////////////////////////////
+
+CGeneralConnection::CGeneralConnection(void)
+{
+	m_pTransConnection = NULL;
+}
+
+CGeneralConnection::~CGeneralConnection(void)
+{
+	
+}
+
+//////////////////////////////////////////////////////////////////////////
+//转接操作函数
+//pConnection
+//
+//////////////////////////////////////////////////////////////////////////
+IConnection* CGeneralConnection::TransitConnect(IConnection * pConnection)
+{
+	IConnection *pOld  = m_pTransConnection;
+
+	m_pTransConnection = pConnection;
+
+	return pOld;
+}
+
+//////////////////////////////////////////////////////////////////////////
+//转接发送函数
+//chBuffer
+//nDataLen 
+//////////////////////////////////////////////////////////////////////////
+IConnection* CGeneralConnection::TransitSend(const unsigned char chBuffer[] , const int nDataLen)
+{
+	if(m_pTransConnection != NULL)
+	{
+		m_pTransConnection->WriteData(chBuffer, nDataLen);
+	}
+
+	return m_pTransConnection;
+}

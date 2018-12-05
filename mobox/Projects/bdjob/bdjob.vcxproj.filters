@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="BDDeviceArray.cpp" />
+    <ClCompile Include="bdexplain.cpp" />
+    <ClCompile Include="connection\ComConnection.cpp" />
+    <ClCompile Include="connection\GeneralConnection.cpp" />
+    <ClCompile Include="global.c" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="buffer.c" />
+    <ClCompile Include="Instance.cpp" />
+    <ClCompile Include="p2p.c" />
+    <ClCompile Include="expat.c" />
+    <ClCompile Include="instapp.c" />
+    <ClCompile Include="json\cJSON.c" />
+    <ClCompile Include="p2pclient.c" />
+    <ClCompile Include="protobuffer.c" />
+    <ClCompile Include="RemoteServce.cpp" />
+    <ClCompile Include="responsepkt.c" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="tool.c" />
+    <ClCompile Include="expat_bdsvr.c" />
+    <ClCompile Include="bdsvrcallback.cpp" />
+    <ClCompile Include="..\..\Tools\BDProtocal\protocal\ChnavtectGlobal.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BDDeviceArray.h" />
+    <ClInclude Include="bdexplain.h" />
+    <ClInclude Include="buffer.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="ConnectionHead.h" />
+    <ClInclude Include="ConnectionInterface.h" />
+    <ClInclude Include="connection\ComConnection.h" />
+    <ClInclude Include="connection\GeneralConnection.h" />
+    <ClInclude Include="global.h" />
+    <ClInclude Include="include\ConstDefine.h" />
+    <ClInclude Include="include\Head.h" />
+    <ClInclude Include="include\ProtoInterface.h" />
+    <ClInclude Include="Instance.h" />
+    <ClInclude Include="p2p.h" />
+    <ClInclude Include="expat.h" />
+    <ClInclude Include="instapp.h" />
+    <ClInclude Include="json\cJSON.h" />
+    <ClInclude Include="p2pclient.h" />
+    <ClInclude Include="protobuffer.h" />
+    <ClInclude Include="RemoteServce.h" />
+    <ClInclude Include="responsepkt.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="tool.h" />
+    <ClInclude Include="expat_bdsvr.h" />
+    <ClInclude Include="bdsvrcallback.h" />
+    <ClInclude Include="..\..\Tools\BDProtocal\protocal\ChnavtectGlobal.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

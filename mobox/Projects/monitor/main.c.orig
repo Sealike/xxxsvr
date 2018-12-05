@@ -1,0 +1,456 @@
+// AppServer.cpp : 定义控制台应用程序的入口点。
+//
+#include "./mio/mio.h"
+#include "client.h"
+#include "p2p.h"
+#include "tool.h"
+#include "p2pclient.h"
+#include <time.h>
+#include "protobuffer.h"
+#include "hiredis.h"
+#include "router_expat.h"
+#include "routermsgcallback.h"
+#include "query_expat.h"
+#include "querymsgcallback.h"
+#include "dbaccess.h"
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
+#define _MAC_WIN_WSA_START(errcode_rtn) \
+{\
+	WORD wVersionRequested;\
+	WSADATA wsaData;\
+	int err;\
+	wVersionRequested = MAKEWORD( 2, 2 );\
+	err = WSAStartup( wVersionRequested, &wsaData );\
+	if ( err != 0 ) {\
+		return errcode_rtn;\
+	}\
+}
+
+// 唯一的应用程序对象
+int g_shutdown = 0;
+redisContext* g_rediscontext = NULL;
+static void _sensor_signal(int signum)
+{
+	g_shutdown = 1;
+}
+
+static void _save_deadsession(int waits)
+{
+	int count = 0;
+	int i = 0;
+	time_t now = time(0);
+	static time_t last = 0;
+
+	if(last == 0) last = now;
+
+	if(now - last < waits) return ;
+
+	last = now;
+
+	count = jqueue_size(client()->dead_sess);
+
+	for(;i < count ;i++)
+	{
+		sess_t dead = (sess_t)jqueue_pull(client()->dead_sess);		
+		if (dead->type == stream_SESS){
+			p2pclient_t p2p = (p2pclient_t)dead;
+			BOOL connected = p2pclient_connect(p2p, client()->mio, client()->dead_sess, client(), stream_SESS, NULL, client());
+			
+			if (connected){
+				init_sess_st initpara;
+				strcpy_s(initpara.from, sizeof(initpara.from) - 1, "smcache");
+				strcpy_s(initpara.to, sizeof(initpara.to) - 1, dead->sname);
+				p2pclient_init(p2p, &initpara);
+			}
+		}
+		else if (dead->type == back_server_SESS){
+			sess_free(dead);
+		}		
+	}
+}
+
+//Ping协议
+static void _pingsession(int waits)
+{
+	int i = 0;
+	int count = 0;
+	time_t now = time(0);
+	static time_t last = 0;
+	if(last == 0) last = now;
+
+	if(now - last < waits) return ;
+
+	last = now;
+
+	count = jqueue_size(client()->session_que);
+
+	for(;i<count;i++)
+	{
+		sess_t sess = (sess_t)jqueue_pull(client()->session_que);
+		jqueue_push(client()->session_que, sess, 0);
+
+		if(sess->binitsess == TRUE)
+		{
+			p2pclient_t  p2p  = (p2pclient_t)sess;			
+			protobuffer_send(p2p,eProto_ping,NULL);
+			{
+				char buffer[64];
+				time_t now = time(0);
+				strftime(buffer,sizeof(buffer),"%Y-%m-%d %H:%M:%S",localtime(&now));
+				printf("%s ping %s.\n",buffer,sess->sname);	
+			}
+		}
+	}
+}
+
+static redisContext* redisinit()
+{
+	redisContext* c = redisConnect("127.0.0.1", 6379);
+	if (c->err)
+	{
+		redisFree(c);
+		printf("Connect to redisServer faile\n");
+		return  NULL ;
+	}
+	return c;
+	printf("Connect to redisServer Success\n");
+}
+
+int s_atoi(const char* p){
+	if(p == NULL) 
+		return 0;
+	else 
+		return atoi(p);
+}
+
+char* s_strdup(const char* src){
+	if(src != NULL){
+		int strl = strlen(src);
+		char* p = (char*)malloc(strl+1);
+		strcpy_s(p,strl+1,src);
+		return p;
+	}
+
+	return NULL;
+}
+
+double s_atof(const char* str){
+	if(str == NULL) return 0;
+	return atof(str);
+}
+
+/*注释*/
+static void _app_config_expand(client_p client) 
+{
+	client->frontend_ip = s_strdup("0.0.0.0");
+
+	client->frontend_port = j_atoi(config_get_one(client->config, "frontend.port", 0),0);
+	if(client->frontend_port == 0)
+		client->frontend_port = 6248;
+
+	client->routerserver_ip = _strdup(config_get_one(client->config, "router.ip", 0));
+	client->routerserver_port = j_atoi(config_get_one(client->config, "router.port", 0),0);
+	if(client->routerserver_port == 0)
+		client->routerserver_port = 3340;
+
+	client->storage_ip = _strdup(config_get_one(client->config, "storage.ip", 0));
+	client->storage_port = j_atoi(config_get_one(client->config, "storage.port", 0), 0);
+	if (client->storage_port == 0)
+		client->storage_port = 5432;
+
+	client->appattr.db_name = config_get_one(client->config, "db.dbname", 0); //平台信息数据库
+	client->appattr.db_ip = config_get_one(client->config, "db.ip", 0);
+	client->appattr.db_port = j_atoi(config_get_one(client->config, "db.port", 0), 0);
+	client->appattr.db_pwd = config_get_one(client->config, "db.dbpwd", 0); 
+	client->appattr.db_user = "root";
+	/*client->appattr.db_pwd = "Aa123456";*/
+}
+
+#define DEFAULT_PATH "./"
+
+static void clear_zombie_from_lives();
+static BOOL check_zombie(sess_t sess,time_t now);
+
+static void   clear_deads_from_lives();
+static void   check_dead_from_lives(sess_t sessdead);
+
+static void   check_inactive_client(int sec);
+
+static void   _mysql_querycallback(void* conn, int type, int code);
+static void   _mysql_ping(void* conn, int waits);
+int main(int argc, char **argv)
+{	
+	p2pclient_t  p2p = 0;
+	int counter = 0;
+	char*           config_file  = NULL;
+	time_t          lastcheckperson = time(0);
+	jqueue_t        inactivequeue = jqueue_new();
+#ifdef HAVE_WINSOCK2_H
+	_MAC_WIN_WSA_START(0);
+#endif
+
+	jabber_signal(SIGTERM, _sensor_signal);
+	
+#ifndef _WIN32
+	jabber_signal(SIGPIPE, SIG_IGN);
+#endif
+	
+	config_file = "../etc/smcacheserver.xml";
+	client()->log = log_new(log_STDOUT,NULL,NULL);
+	client()->pktpool = response_pkt_pool_new();
+	client()->config  = config_new();
+
+	if(config_load(client()->config, config_file) != 0)
+	{
+		fputs("sensor: couldn't load config, aborting\n", stderr);
+		client_free(client());
+		return 2;
+	}
+	
+	_app_config_expand(client());
+
+	client()->user_act = users_act_new(8192);
+
+	init_database(client()); //连接数据库
+
+	client()->stream_maxq = 1024;	
+	client()->sessions    = xhash_new(1023);
+	client()->session_que = jqueue_new();
+	client()->dead_sess   = jqueue_new();
+	client()->subjects = subject_new(512);
+
+	client()->mio = mio_new(FD_SETSIZE);	
+	client()->enable_p2p = TRUE;
+
+	p2p_listener_start(client());
+
+	//router服务器
+	p2p = p2pclient_new(client()->routerserver_ip,client()->routerserver_port,stream_SESS); //tcp连接
+	if(!p2pclient_connect(p2p,client()->mio,client()->dead_sess,client(),stream_SESS,NULL,client())){
+		printf("connect to  router server failed ,exit..\n");
+		client_free(client());
+		return 1;
+	}else{
+		p2p->expat = router_exp_new(&p2p->sess); //回调函数
+		exp_set_callback(p2p->expat, router_exp_cb);
+		init_sess_st initpara;
+		strcpy_s(initpara.from, sizeof(initpara.from) - 1, "smcache");
+		strcpy_s(initpara.to, sizeof(initpara.to) - 1, "router");
+		p2pclient_init(p2p, &initpara);
+	}
+	client()->p2prouter = p2p;
+
+	p2p = p2pclient_new(client()->storage_ip, client()->storage_port, stream_SESS); //tcp连接
+	if (!p2pclient_connect(p2p, client()->mio, client()->dead_sess, client(), stream_SESS, NULL, client())){
+		printf("connect to  storage server failed ,exit..\n");
+		client_free(client());
+		return 1;
+	}
+	else{
+		p2p->expat = query_exp_new(&p2p->sess); //回调函数
+		exp_set_callback(p2p->expat, query_exp_cb);
+		init_sess_st initpara;
+		strcpy_s(initpara.from, sizeof(initpara.from) - 1, "smcache");
+		strcpy_s(initpara.to, sizeof(initpara.to) - 1, "storagesvr");
+		p2pclient_init(p2p, &initpara);
+	}
+
+	client()->storage = p2p;
+
+<<<<<<< HEAD
+	while (!g_shutdown)
+	{
+=======
+	redisContext* c = redisinit();//连接redis
+	g_rediscontext = c;
+
+	while(!g_shutdown)
+	{   	
+>>>>>>> 5bbd80eabb0a76f91d0b18053897f5730477412c
+		static time_t last = 0;
+		time_t now = time(NULL);
+		if (last == 0) last = now;
+
+		mio_run(client()->mio, 1);
+
+		clear_deads_from_lives();
+
+		_save_deadsession(7);
+		if (now - last > 2){
+			clear_zombie_from_lives();
+			last = now;
+		}
+		_pingsession(2);
+<<<<<<< HEAD
+		_mysql_ping(client()->sqlobj, 30);
+	}
+
+	client_free(client());
+=======
+
+		check_inactive_client(5);
+
+		_mysql_ping(client()->sqlobj, 30);		
+		
+	}
+
+	client_free(client());
+
+	redisFree(c);
+>>>>>>> 5bbd80eabb0a76f91d0b18053897f5730477412c
+
+	return 0;
+}
+
+void   check_inactive_client(int sec)
+{
+	jqueue_t q = users_act_check(client()->user_act, 5);
+	int cnt = jqueue_size(q);
+
+	for (int i = 0; i < cnt; i++){
+		user_status_t s = jqueue_pull(q);
+		
+		if (s == NULL) continue;
+
+		user_st user;
+		//从数据库查询人员信息，包括其所属的村、镇、组；
+		if (db_loaduser(client()->sqlobj, s->key, &user)){
+			char jreqstr[1024];
+			char buffer[1024];
+
+			int size = jqueue_size(client()->session_que);
+			for (int i = 0; i < size; i++){
+				sess_t sess = jqueue_pull(client()->session_que);
+				jqueue_push(client()->session_que, sess, 0);
+
+				if (((sess->usertype == _town_type) && strcmp(sess->towncode, user.towncode) == 0) || ((sess->usertype == _county_type) && strcmp(sess->towncode, user.countycode) == 0))
+				{
+					int nprint = 0;
+					nprint += sprintf_s(buffer + nprint, sizeof(buffer) - nprint, "$message,smcache,%s,%s", sess->skey, jreqstr);
+					nprint += sprintf_s(buffer + nprint, sizeof(buffer) - nprint, "*%02X\r\n", checksum(buffer, nprint));
+					send2namend(sess->skey, buffer, nprint);
+				}
+			}
+		}
+
+		free(s);
+	}
+
+	jqueue_free(q);
+}
+
+void clear_zombie_from_lives()
+{	
+	int  i = 0;
+	int  count = jqueue_size(client()->session_que);
+	time_t now = time(0);
+
+	for(;i<count;i++)
+	{
+		sess_t sess = (sess_t)jqueue_pull(client()->session_que);
+
+		if(sess == NULL) continue;
+
+		if(check_zombie(sess,now))
+			p2p_kill((p2p_t)sess);
+		else
+			jqueue_push(client()->session_que,sess,0);
+	}
+}
+
+void clear_deads_from_lives()
+{
+	int count = jqueue_size(client()->dead_sess);
+	int i = 0;
+
+	for(;i<count;i++){
+		sess_t sess = (sess_t)jqueue_pull(client()->dead_sess);
+		jqueue_push(client()->dead_sess,sess,0);
+		check_dead_from_lives(sess);
+	}
+}
+
+void check_dead_from_lives(sess_t sessdead)
+{
+	int i = 0;
+	int count = jqueue_size(client()->session_que);
+
+	for(;i < count ; i++){
+		void* p = jqueue_pull(client()->session_que);
+		if(sessdead == p) break;
+
+		jqueue_push(client()->session_que,p,0);
+	}
+}
+
+BOOL check_zombie(sess_t sess,time_t now){
+	BOOL rtn = FALSE;
+
+	/*if((now-sess->last_activity) > 7){		
+		rtn = TRUE;
+	}*/
+
+	return rtn;
+}
+
+static void _mysql_querycallback(void* conn, int type, int code)
+{
+	time_t now = time(NULL);
+
+	char timestr[64];
+
+	if (type == eSqlQueryerr_errorquery || type == eSqlQueryerr_errorping){
+		mysqlquery_t conn = NULL;
+
+		mysqldb_close(client()->sqlobj);
+		conn = mysqldb_connect_reinit(&client()->sqlobj, client()->appattr.db_ip, client()->appattr.db_port, client()->appattr.db_user, client()->appattr.db_pwd, client()->appattr.db_name);
+
+		if (!mysqldb_isclosed(client()->sqlobj))
+			log_write(client()->log, LOG_NOTICE, "connected db ok\n");
+		else
+			log_write(client()->log, LOG_NOTICE, "connected db failed\n");
+
+	}
+	else if (type == eSqlConnectOk)
+	{
+		mysqlquery_t connptr = (mysqlquery_t)conn;
+		mysql_query(connptr->m_con, "SET NAMES 'gb2312'");
+
+		log_write(client()->log, LOG_NOTICE, "connected db ok\n");
+	}
+}
+static int init_database(_s_client_p client)
+{
+	mysqlquery_t sqlobj = NULL;
+	sqlobj = mysqldb_connect_init(client->appattr.db_ip, client->appattr.db_port, client->appattr.db_user, client->appattr.db_pwd, client->appattr.db_name, _mysql_querycallback);
+	if (sqlobj == NULL)
+	{
+		log_write(client->log, LOG_NOTICE, "connect to database failed. server exit. line%d @%s\n", __LINE__, __FILE__);
+		g_shutdown = TRUE;
+	}
+	client->sqlobj = sqlobj;
+	return client->sqlobj != 0;
+}
+
+static void _mysql_ping(void* conn, int waits)
+{
+	int i = 0;
+	int count = 0;
+	time_t now = time(0);
+	int pingcode;
+	mysqlquery_t mysqlconn = (mysqlquery_t)conn;
+
+	static time_t last = 0;
+
+	if (last == 0) last = now;
+
+	if (now - last < waits) return;
+	last = now;
+
+	pingcode = mysqldb_ping(mysqlconn);
+
+	log_write(client()->log, LOG_NOTICE, "mysql query code %d[%s]", pingcode, pingcode == 0 ? "success" : "failed");
+}

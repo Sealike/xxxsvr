@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="buffer.c" />
+    <ClCompile Include="client.c" />
+    <ClCompile Include="dbaccess.c" />
+    <ClCompile Include="expat.c" />
+    <ClCompile Include="globaldata.c" />
+    <ClCompile Include="grouprslt.c" />
+    <ClCompile Include="json\cJSON.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="myquery\mysqldb.c" />
+    <ClCompile Include="p2p.c" />
+    <ClCompile Include="p2pclient.c" />
+    <ClCompile Include="protobuffer.c" />
+    <ClCompile Include="rediscommand.c" />
+    <ClCompile Include="responsepkt.c" />
+    <ClCompile Include="responser.c" />
+    <ClCompile Include="tool.c" />
+    <ClCompile Include="opensess_exp.c" />
+    <ClCompile Include="subject.c" />
+    <ClCompile Include="userstatus.c" />
+    <ClCompile Include="frontsvr_callback.c" />
+    <ClCompile Include="frontsvr_expat.c" />
+    <ClCompile Include="moniclient_callback.c" />
+    <ClCompile Include="moniclient_expat.c" />
+    <ClCompile Include="subscribe.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\ConnectionInterface.h" />
+    <ClInclude Include="buffer.h" />
+    <ClInclude Include="client.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="dbaccess.h" />
+    <ClInclude Include="expat.h" />
+    <ClInclude Include="globaldata.h" />
+    <ClInclude Include="grouprslt.h" />
+    <ClInclude Include="hiredis.h" />
+    <ClInclude Include="json\cJSON.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="myquery\mysqldb.h" />
+    <ClInclude Include="mysqldb.h" />
+    <ClInclude Include="p2p.h" />
+    <ClInclude Include="p2pclient.h" />
+    <ClInclude Include="protobuffer.h" />
+    <ClInclude Include="rediscommand.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="responsepkt.h" />
+    <ClInclude Include="responser.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="tool.h" />
+    <ClInclude Include="opensess_exp.h" />
+    <ClInclude Include="subject.h" />
+    <ClInclude Include="userstatus.h" />
+    <ClInclude Include="frontsvr_callback.h" />
+    <ClInclude Include="frontsvr_expat.h" />
+    <ClInclude Include="moniclient_callback.h" />
+    <ClInclude Include="moniclient_expat.h" />
+    <ClInclude Include="subscribe.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

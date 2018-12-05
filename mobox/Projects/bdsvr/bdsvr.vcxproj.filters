@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="tool.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="responsepkt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuffer.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="p2pclient.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="p2p.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="instapp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="expat.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="buffer.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bdjobber_expat.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="json\cJSON.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="globaldata.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="client.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="opensess_exp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dbaccess.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="grouprslt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="myquery\mysqldb.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bdjobber_callback.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="jsonstring.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="findjobber.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="membuff.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="http\httpc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="httpclient.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="jobqueue.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CirQueue.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="frontsvr_callback.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="frontsvr_expat.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="responsepkt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="p2pclient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="p2p.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="instapp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="expat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bdjobber_expat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bdjobber_callback.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="json\cJSON.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="client.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="opensess_exp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dbaccess.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="grouprslt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="myquery\mysqldb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="jsonstring.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="findjobber.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="membuff.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="http\httpc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="httpclient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="jobqueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CirQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="frontsvr_callback.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="frontsvr_expat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

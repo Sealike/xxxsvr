@@ -1,0 +1,236 @@
+﻿生成启动时间为 9/5/2017 11:49:28 AM。
+     1>项目“E:\BluetoothProject\smplatform\smplatform\jabber\util\util.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I../ /I../expat/include /I../openssl/include /I"../libidn-1.24/include" /I../pthreads /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /D _MBCS /D HAVE_CONFIG_H /D HAVE_WINSOCK2_H /D HAVE_INET_NTOP /D _USE_32BIT_TIME_T /D USE_LIBSUBST /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt access.c avl.c base64.c config.c datetime.c filemap.c hex.c inaddr.c jid.c jqueue.c jsignal.c jsqueue.c log.c md5.c mempool.c nad.c pool.c rate.c serial.c stanza.c str.c xdata.c xhash.c
+         xhash.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+         xdata.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+         str.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\str.c(28): warning C4047: “函数”:“int”与“void *”的间接级别不同
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\str.c(28): warning C4024: “MultiByteToWideChar”: 形参和实参 6 的类型不同
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\str.c(31): warning C4133: “函数”: 从“char *”到“LPWSTR”的类型不兼容
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\str.c(33): warning C4133: “函数”: 从“char *”到“LPCWCH”的类型不兼容
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\str.c(35): warning C4133: “函数”: 从“char *”到“LPCWCH”的类型不兼容
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\str.c(57): warning C4090: “函数”: 不同的“const”限定符
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\str.c(88): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _stricmp. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(253) : 参见“stricmp”的声明
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\str.c(104): warning C4996: 'strnicmp': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strnicmp. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(255) : 参见“strnicmp”的声明
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\str.c(292): warning C4018: “<”: 有符号/无符号不匹配
+         stanza.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+         serial.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\serial.c(135): warning C4018: “>”: 有符号/无符号不匹配
+         rate.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+         pool.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+         nad.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\nad.c(107): warning C4018: “>”: 有符号/无符号不匹配
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\nad.c(420): warning C4018: “>”: 有符号/无符号不匹配
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\nad.c(483): warning C4018: “>”: 有符号/无符号不匹配
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\nad.c(528): warning C4018: “>”: 有符号/无符号不匹配
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\nad.c(631): warning C4018: “>”: 有符号/无符号不匹配
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\nad.c(674): warning C4018: “>”: 有符号/无符号不匹配
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\nad.c(688): warning C4018: “>”: 有符号/无符号不匹配
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\nad.c(746): warning C4018: “>”: 有符号/无符号不匹配
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\nad.c(778): warning C4018: “>”: 有符号/无符号不匹配
+         mempool.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+         md5.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+         log.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\log.c(60): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _stricmp. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(253) : 参见“stricmp”的声明
+         jsqueue.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+         jsignal.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\jsignal.c(177): warning C4090: “初始化”: 不同的“const”限定符
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\jsignal.c(180): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+         jqueue.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+         jid.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+         inaddr.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.c(113): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1868) : 参见“inet_ntoa”的声明
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.c(151): warning C4101: “sin6”: 未引用的局部变量
+         hex.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+         filemap.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\filemap.c(20): warning C4133: “函数”: 从“int64_t *”到“PLARGE_INTEGER”的类型不兼容
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\filemap.c(22): warning C4244: “函数”: 从“int64_t”转换到“SIZE_T”，可能丢失数据
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\filemap.c(76): warning C4244: “函数”: 从“int64_t”转换到“SIZE_T”，可能丢失数据
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\filemap.c(105): warning C4098: “j_fclose”:“void”函数返回值
+         datetime.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\datetime.c(28): warning C4996: 'tzset': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _tzset. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 12.0\vc\include\time.h(297) : 参见“tzset”的声明
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\datetime.c(24): warning C4101: “ret”: 未引用的局部变量
+         config.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\config.c(332): warning C4090: “=”: 不同的“const”限定符
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\config.c(340): warning C4033: “config_set_one”必须返回值
+         正在生成代码...
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\config.c(298): warning C4715: “config_set_attr”: 不是所有的控件路径都返回值
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\config.c(353): warning C4715: “config_set_one”: 不是所有的控件路径都返回值
+         正在编译...
+         base64.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+         avl.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+         access.c
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(453): warning C4005: “HAVE_WINSOCK2_H”: 宏重定义
+                 命令行参数: 参见前面的“HAVE_WINSOCK2_H”定义
+     1>e:\bluetoothproject\smplatform\smplatform\config.h(687): warning C4005: “USE_LIBSUBST”: 宏重定义
+                 命令行参数: 参见前面的“USE_LIBSUBST”定义
+     1>e:\bluetoothproject\smplatform\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\program files (x86)\windows kits\8.1\include\shared\ws2ipdef.h(898): warning C4005: “INET6_ADDRSTRLEN”: 宏重定义
+                 e:\bluetoothproject\smplatform\smplatform\jabber\util\util_compat.h(47) : 参见“INET6_ADDRSTRLEN”的前一个定义
+         正在生成代码...
+       Lib:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"../lib/util.lib" /NOLOGO Debug\access.obj
+         Debug\avl.obj
+         Debug\base64.obj
+         Debug\config.obj
+         Debug\datetime.obj
+         Debug\filemap.obj
+         Debug\hex.obj
+         Debug\inaddr.obj
+         Debug\jid.obj
+         Debug\jqueue.obj
+         Debug\jsignal.obj
+         Debug\jsqueue.obj
+         Debug\log.obj
+         Debug\md5.obj
+         Debug\mempool.obj
+         Debug\nad.obj
+         Debug\pool.obj
+         Debug\rate.obj
+         Debug\serial.obj
+         Debug\stanza.obj
+         Debug\str.obj
+         Debug\xdata.obj
+         Debug\xhash.obj
+         util.vcxproj -> E:\BluetoothProject\smplatform\smplatform\jabber\util\..\lib\util.lib
+     1>已完成生成项目“E:\BluetoothProject\smplatform\smplatform\jabber\util\util.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:04.37

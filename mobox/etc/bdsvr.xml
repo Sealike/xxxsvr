@@ -1,0 +1,34 @@
+<bdsvr>
+
+<bdjob>
+  <enable>true</enable>
+  <port>3348</port>
+</bdjob>
+
+<frontsvr>
+   <ip>127.0.0.1</ip>
+   <port>7120</port>
+</frontsvr>
+
+<seqno>
+	<tofrontsvr xmlns='config:edit'>2409</tofrontsvr></seqno>
+	
+<db>
+	<driver>mysql</driver>
+	<ip>127.0.0.1</ip>
+	<port>3306</port>
+	<dbname>xxxgw</dbname>
+	<user>root</user>
+	<pwd>Aa123456</pwd>
+</db>
+
+
+<auth>
+	<userid>1211</userid>
+	<pwd>123456</pwd>
+	<name>bdsvr01</name>
+	<role>bdsvr</role>
+</auth>
+
+
+</bdsvr>

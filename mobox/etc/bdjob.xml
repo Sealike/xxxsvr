@@ -1,0 +1,23 @@
+<?xml version="1.0" ?> 
+<bdjob>
+
+<bdsvr>
+   <ip>27.128.164.177</ip>
+   <port>3348</port>
+</bdsvr>
+
+
+<device>
+  <number>1</number>  
+  <cache>1</cache>     
+</device>
+
+
+<cominfo0>
+  <comnum>1</comnum>  
+  <baud>115200</baud>
+  <protocal>1</protocal> 
+</cominfo0>
+
+
+</bdjob>

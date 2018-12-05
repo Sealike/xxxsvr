@@ -1,0 +1,28 @@
+<?xml version="1.0" ?> 
+<monitor>
+	
+<moniclient>
+	<port>3354</port>
+</moniclient>
+
+<frontsvr>
+	<ip>127.0.0.1</ip>
+	<port>7126</port>
+</frontsvr>
+
+<db>
+	<driver>mysql</driver>
+	<ip>127.0.0.1</ip>
+	<port>3306</port>
+	<name>xxxgw</name>
+	<pwd>Aa123456</pwd>
+	<user>root</user>
+</db>
+
+
+<log>
+	<type>0</type>		// log_STDOUT = 0; log_SYSLOG = 1; log_FILE = 2;
+</log>
+	
+</monitor>
+

@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AB98D88F-4048-4736-B358-C7BE229A2FF5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>appserver</RootNamespace>
+    <ProjectName>monitor</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>../../Tools/Win32_Interop/;../../mysql32/include;./;../../jabber/openssl/include;../../jabber;../../;$(IncludePath)</IncludePath>
+    <LibraryPath>../../mysql32/lib;../../lib;$(LibraryPath)</LibraryPath>
+    <OutDir>../../bin/exe/</OutDir>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>util.lib;mio.lib;subst.lib;libeay32.lib;pthreads.lib;hiredis.lib;Win32_Interop.lib;libmysql.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;advapi32.lib;shell32.lib;uuid.lib;WS2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD.lib</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>../../bin/other/$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>../../bin/other/monitor.lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\ConnectionInterface.h" />
+    <ClInclude Include="buffer.h" />
+    <ClInclude Include="client.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="dbaccess.h" />
+    <ClInclude Include="moniclient_callback.h" />
+    <ClInclude Include="moniclient_expat.h" />
+    <ClInclude Include="opensess_exp.h" />
+    <ClInclude Include="expat.h" />
+    <ClInclude Include="globaldata.h" />
+    <ClInclude Include="grouprslt.h" />
+    <ClInclude Include="hiredis.h" />
+    <ClInclude Include="json\cJSON.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="myquery\mysqldb.h" />
+    <ClInclude Include="mysqldb.h" />
+    <ClInclude Include="p2p.h" />
+    <ClInclude Include="p2pclient.h" />
+    <ClInclude Include="protobuffer.h" />
+    <ClInclude Include="rediscommand.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="responsepkt.h" />
+    <ClInclude Include="responser.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="subscribe.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="tool.h" />
+    <ClInclude Include="subject.h" />
+    <ClInclude Include="userstatus.h" />
+    <ClInclude Include="frontsvr_callback.h" />
+    <ClInclude Include="frontsvr_expat.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="buffer.c" />
+    <ClCompile Include="client.c" />
+    <ClCompile Include="dbaccess.c" />
+    <ClCompile Include="moniclient_callback.c" />
+    <ClCompile Include="moniclient_expat.c" />
+    <ClCompile Include="opensess_exp.c" />
+    <ClCompile Include="expat.c" />
+    <ClCompile Include="globaldata.c" />
+    <ClCompile Include="grouprslt.c" />
+    <ClCompile Include="json\cJSON.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="myquery\mysqldb.c" />
+    <ClCompile Include="p2p.c" />
+    <ClCompile Include="p2pclient.c" />
+    <ClCompile Include="protobuffer.c" />
+    <ClCompile Include="rediscommand.c" />
+    <ClCompile Include="responsepkt.c" />
+    <ClCompile Include="responser.c" />
+    <ClCompile Include="subscribe.c" />
+    <ClCompile Include="tool.c" />
+    <ClCompile Include="subject.c" />
+    <ClCompile Include="userstatus.c" />
+    <ClCompile Include="frontsvr_callback.c" />
+    <ClCompile Include="frontsvr_expat.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

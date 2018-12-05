@@ -1,0 +1,367 @@
+﻿生成启动时间为 5/20/2018 11:33:47 AM。
+     1>项目“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\frontsvr\frontsvr.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(364,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (smcacheserver.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D HAVE_CONFIG_H /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt bdsvr_callback.c bdsvr_expat.c buffer.c client.c dbaccess.c monitor_callback.c monitor_expat.c opensess_exp.c expat.c globaldata.c grouprslt.c json\cJSON.c main.c myquery\mysqldb.c p2p.c p2pclient.c protobuffer.c rediscommand.c responsepkt.c responser.c tool.c subject.c town_expat.c userstatus.c warnsvr_callback.c warnsvr_expat.c
+         warnsvr_expat.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\warnsvr_expat.c(17): warning C4005: “NULL”: 宏重定义
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(39) : 参见“NULL”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\warnsvr_expat.c(211): warning C4047: “函数”:“int”与“warnsvr_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\warnsvr_expat.c(211): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\warnsvr_expat.c(217): warning C4047: “函数”:“int”与“warnsvr_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\warnsvr_expat.c(217): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\warnsvr_expat.c(223): warning C4047: “函数”:“int”与“warnsvr_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\warnsvr_expat.c(223): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\warnsvr_expat.c(229): warning C4047: “函数”:“int”与“warnsvr_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\warnsvr_expat.c(229): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\warnsvr_expat.c(235): warning C4047: “函数”:“int”与“warnsvr_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\warnsvr_expat.c(235): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+         warnsvr_callback.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\warnsvr_callback.c(152): warning C4133: “函数”: 从“p2p_t”到“p2pclient_t”的类型不兼容
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\warnsvr_callback.c(141): warning C4101: “error”: 未引用的局部变量
+         userstatus.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+         town_expat.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(12): warning C4005: “NULL”: 宏重定义
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(39) : 参见“NULL”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(192): warning C4996: 'strnicmp': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strnicmp. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(255) : 参见“strnicmp”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(264): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(265): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(284): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(285): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(299): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(300): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(319): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(320): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(335): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(336): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(352): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(366): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(367): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(385): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\town_expat.c(396): warning C4996: 'strnicmp': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strnicmp. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(255) : 参见“strnicmp”的声明
+         subject.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+         tool.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\tool.c(47): warning C4244: “=”: 从“int64_t”转换到“int”，可能丢失数据
+         responser.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\responser.c(25): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1868) : 参见“inet_ntoa”的声明
+         responsepkt.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\responsepkt.c(5): warning C4005: “NULL”: 宏重定义
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(36) : 参见“NULL”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\responsepkt.c(49): warning C4018: “>=”: 有符号/无符号不匹配
+         rediscommand.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\ac-stdint.h(18): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\rediscommand.c(10): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\rediscommand.c(11): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : 参见“strcat”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\rediscommand.c(13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\rediscommand.c(36): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\rediscommand.c(61): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\rediscommand.c(78): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+         protobuffer.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\protobuffer.c(121): warning C4013: “logger”未定义；假设外部返回 int
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\protobuffer.c(121): warning C4047: “函数”:“log_t”与“int”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\protobuffer.c(121): warning C4024: “log_write”: 形参和实参 1 的类型不同
+         p2pclient.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\p2pclient.c(288): warning C4018: “<”: 有符号/无符号不匹配
+         p2p.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\p2p.c(226): warning C4018: “<”: 有符号/无符号不匹配
+         mysqldb.c
+         main.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\main.c(136): warning C4101: “szvalue”: 未引用的局部变量
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\main.c(228): warning C4133: “函数”: 从“mysqlquery_t”到“const char *”的类型不兼容
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\main.c(228): warning C4133: “=”: 从“mysqlquery_t”到“char *”的类型不兼容
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\main.c(244): warning C4133: “函数”: 从“mysqlquery_t”到“const char *”的类型不兼容
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\main.c(246): warning C4133: “函数”: 从“mysqlquery_t”到“const char *”的类型不兼容
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\main.c(361): warning C4133: “=”: 从“warnsvr_exp_t”到“_exp_t”的类型不兼容
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\main.c(362): warning C4113: “void (__cdecl *)(int,void *,int,void *)”和“pfunsearchexp_cb”的参数列表不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\main.c(517): warning C4029: 声明的形参表不同于定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\main.c(524): warning C4133: “函数”: 从“void **”到“mysqlquery_t *”的类型不兼容
+         cJSON.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\json\cjson.c(155): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\json\cjson.c(161): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\json\cjson.c(169): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\json\cjson.c(170): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\json\cjson.c(171): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\json\cjson.c(264): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\json\cjson.c(275): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\json\cjson.c(301): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\json\cjson.c(380): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\json\cjson.c(381): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\json\cjson.c(382): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\json\cjson.c(449): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\json\cjson.c(647): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
+         grouprslt.c
+         globaldata.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+         expat.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\expat.c(35): warning C4005: “NULL”: 宏重定义
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(36) : 参见“NULL”的前一个定义
+         opensess_exp.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\opensess_exp.c(14): warning C4005: “NULL”: 宏重定义
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(36) : 参见“NULL”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\opensess_exp.c(290): warning C4113: “void (__cdecl *)(int,void *,int,void *)”和“pfunsearchexp_cb”的参数列表不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\opensess_exp.c(304): warning C4113: “void (__cdecl *)(int,void *,int,void *)”和“pfunsearchexp_cb”的参数列表不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\opensess_exp.c(337): warning C4113: “void (__cdecl *)(int,void *,int,void *)”和“pfunsearchexp_cb”的参数列表不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\opensess_exp.c(349): warning C4113: “void (__cdecl *)(int,void *,int,void *)”和“pfunsearchexp_cb”的参数列表不同
+         monitor_expat.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\monitor_expat.c(13): warning C4005: “NULL”: 宏重定义
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(39) : 参见“NULL”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\monitor_expat.c(253): warning C4047: “函数”:“int”与“_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\monitor_expat.c(253): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\monitor_expat.c(260): warning C4047: “函数”:“int”与“_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\monitor_expat.c(260): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\monitor_expat.c(267): warning C4047: “函数”:“int”与“_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\monitor_expat.c(267): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\monitor_expat.c(274): warning C4047: “函数”:“int”与“_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\monitor_expat.c(274): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\monitor_expat.c(226): warning C4101: “sence”: 未引用的局部变量
+         正在生成代码...
+         正在编译...
+         monitor_callback.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\monitor_callback.c(118): warning C4133: “函数”: 从“p2p_t”到“p2pclient_t”的类型不兼容
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\monitor_callback.c(88): warning C4101: “msgtype”: 未引用的局部变量
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\monitor_callback.c(128): warning C4101: “pwd”: 未引用的局部变量
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\monitor_callback.c(128): warning C4101: “net”: 未引用的局部变量
+         dbaccess.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\config.h(692): warning C4005: “FD_SETSIZE”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(133) : 参见“FD_SETSIZE”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(16): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(25): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(27): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(29): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(31): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(33): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 参见“strncpy”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(62): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(100): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(141): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(184): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(222): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(262): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(263): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(312): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(313): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(366): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(373): warning C4244: “=”: 从“my_ulonglong”转换到“int”，可能丢失数据
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(375): warning C4244: “=”: 从“my_ulonglong”转换到“int”，可能丢失数据
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(403): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(410): warning C4244: “=”: 从“my_ulonglong”转换到“int”，可能丢失数据
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(522): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(530): warning C4047: “函数”:“const char *”与“MYSQL_ROW”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(530): warning C4024: “strcmp”: 形参和实参 1 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\dbaccess.c(558): warning C4133: “函数”: 从“mysqlquery_t”到“const char *”的类型不兼容
+         client.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\client.c(163): warning C4996: '_getsystime': This function or variable has been superceded by newer library or operating system functionality. Consider using GetLocalTime instead. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.h(231) : 参见“_getsystime”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\client.c(179): warning C4996: '_getsystime': This function or variable has been superceded by newer library or operating system functionality. Consider using GetLocalTime instead. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.h(231) : 参见“_getsystime”的声明
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\client.c(320): warning C4047: “=”:“char *”与“int”的间接级别不同
+         buffer.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\buffer.c(5): warning C4005: “NULL”: 宏重定义
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(36) : 参见“NULL”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\buffer.c(13): warning C4013: “calloc”未定义；假设外部返回 int
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\buffer.c(19): warning C4013: “malloc”未定义；假设外部返回 int
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\buffer.c(44): warning C4013: “free”未定义；假设外部返回 int
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\buffer.c(70): warning C4013: “realloc”未定义；假设外部返回 int
+         bdsvr_expat.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(12): warning C4005: “NULL”: 宏重定义
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(39) : 参见“NULL”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(262): warning C4047: “函数”:“int”与“_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(262): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(269): warning C4047: “函数”:“int”与“_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(269): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(276): warning C4047: “函数”:“int”与“_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(276): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(283): warning C4047: “函数”:“int”与“_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(283): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(290): warning C4047: “函数”:“int”与“_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(290): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(297): warning C4047: “函数”:“int”与“_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(297): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(304): warning C4047: “函数”:“int”与“_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(304): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(311): warning C4047: “函数”:“int”与“_exp_t”的间接级别不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(311): warning C4024: “通过指针的函数”: 形参和实参 4 的类型不同
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_expat.c(235): warning C4101: “sence”: 未引用的局部变量
+         bdsvr_callback.c
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_callback.c(81): warning C4133: “函数”: 从“p2p_t”到“p2pclient_t”的类型不兼容
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_callback.c(474): warning C4098: “bdsvr_exp_cb”:“void”函数返回值
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_callback.c(488): warning C4098: “bdsvr_exp_cb”:“void”函数返回值
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_callback.c(51): warning C4101: “destsess”: 未引用的局部变量
+     1>c:\users\administrator\desktop\携行位置监控系统\工程\mobox\frontsvr\bdsvr_callback.c(91): warning C4101: “pwd”: 未引用的局部变量
+         正在生成代码...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../bin\frontsvr.exe" /INCREMENTAL /NOLOGO util.lib mio.lib subst.lib libeay32.lib pthreads.lib hiredis.lib Win32_Interop.lib libmysql.lib kernel32.lib user32.lib gdi32.lib winspool.lib advapi32.lib shell32.lib uuid.lib WS2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:LIBCMTD.lib /MANIFEST:NO /DEBUG /PDB:"../bin\frontsvr.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../bin\frontsvr.lib" /MACHINE:X86 Debug\bdsvr_callback.obj
+         Debug\bdsvr_expat.obj
+         Debug\buffer.obj
+         Debug\client.obj
+         Debug\dbaccess.obj
+         Debug\monitor_callback.obj
+         Debug\monitor_expat.obj
+         Debug\opensess_exp.obj
+         Debug\expat.obj
+         Debug\globaldata.obj
+         Debug\grouprslt.obj
+         Debug\cJSON.obj
+         Debug\main.obj
+         Debug\mysqldb.obj
+         Debug\p2p.obj
+         Debug\p2pclient.obj
+         Debug\protobuffer.obj
+         Debug\rediscommand.obj
+         Debug\responsepkt.obj
+         Debug\responser.obj
+         Debug\tool.obj
+         Debug\subject.obj
+         Debug\town_expat.obj
+         Debug\userstatus.obj
+         Debug\warnsvr_callback.obj
+         Debug\warnsvr_expat.obj
+            正在创建库 ../bin\frontsvr.lib 和对象 ../bin\frontsvr.exp
+     1>util.lib(config.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(config.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(hex.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(hex.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(inaddr.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(inaddr.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(jqueue.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(jqueue.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(jsignal.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(jsignal.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(log.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(log.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(nad.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(nad.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(pool.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(pool.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(str.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(str.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>util.lib(xhash.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“util.lib(xhash.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>mio.lib(mio.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“mio.lib(mio.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>mio.lib(mio_select.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“mio.lib(mio_select.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>subst.lib(inet_aton.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“subst.lib(inet_aton.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>subst.lib(snprintf.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“subst.lib(snprintf.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>subst.lib(strndup.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“subst.lib(strndup.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>subst.lib(syslog.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“subst.lib(syslog.obj)”或在“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>hiredis.lib(hiredis.obj) : warning LNK4204: “C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc120.pdb”缺少引用模块的调试信息；正在链接对象，如同没有调试信息一样
+     1>hiredis.lib(net.obj) : warning LNK4204: “C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc120.pdb”缺少引用模块的调试信息；正在链接对象，如同没有调试信息一样
+     1>hiredis.lib(sds.obj) : warning LNK4204: “C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc120.pdb”缺少引用模块的调试信息；正在链接对象，如同没有调试信息一样
+     1>Win32_Interop.lib(Win32_ANSI.obj) : warning LNK4204: “C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc120.pdb”缺少引用模块的调试信息；正在链接对象，如同没有调试信息一样
+     1>Win32_Interop.lib(Win32_Common.obj) : warning LNK4204: “C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc120.pdb”缺少引用模块的调试信息；正在链接对象，如同没有调试信息一样
+     1>Win32_Interop.lib(Win32_Error.obj) : warning LNK4204: “C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc120.pdb”缺少引用模块的调试信息；正在链接对象，如同没有调试信息一样
+     1>Win32_Interop.lib(Win32_EventLog.obj) : warning LNK4204: “C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc120.pdb”缺少引用模块的调试信息；正在链接对象，如同没有调试信息一样
+     1>Win32_Interop.lib(Win32_FDAPI.obj) : warning LNK4204: “C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc120.pdb”缺少引用模块的调试信息；正在链接对象，如同没有调试信息一样
+     1>Win32_Interop.lib(Win32_fdapi_crt.obj) : warning LNK4204: “C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc120.pdb”缺少引用模块的调试信息；正在链接对象，如同没有调试信息一样
+     1>Win32_Interop.lib(Win32_RedisLog.obj) : warning LNK4204: “C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc120.pdb”缺少引用模块的调试信息；正在链接对象，如同没有调试信息一样
+     1>Win32_Interop.lib(win32_rfdmap.obj) : warning LNK4204: “C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc120.pdb”缺少引用模块的调试信息；正在链接对象，如同没有调试信息一样
+     1>Win32_Interop.lib(Win32_Time.obj) : warning LNK4204: “C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc120.pdb”缺少引用模块的调试信息；正在链接对象，如同没有调试信息一样
+     1>Win32_Interop.lib(Win32_variadicFunctor.obj) : warning LNK4204: “C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\bin\vc120.pdb”缺少引用模块的调试信息；正在链接对象，如同没有调试信息一样
+         frontsvr.vcxproj -> C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\frontsvr\../bin\frontsvr.exe
+     1>已完成生成项目“C:\Users\Administrator\Desktop\携行位置监控系统\工程\mobox\frontsvr\frontsvr.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:07.80

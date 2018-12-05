@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{793805BE-9E38-48A1-B12B-F2A74FFE40F2}</ProjectGuid>
+    <RootNamespace>util</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\lib\</OutDir>
+    <IncludePath>../expat/;$(IncludePath);../../</IncludePath>
+    <LibraryPath>../lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>..\openssl\include;..\subst;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\work\suppress\RadioDepress\lib;../lib;$(LibraryPath)</LibraryPath>
+    <OutDir>..\lib\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);../;../expat/include;../openssl/include;../libidn-1.24/include;../pthreads</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);HAVE_CONFIG_H;HAVE_WINSOCK2_H;HAVE_INET_NTOP;_USE_32BIT_TIME_T;USE_LIBSUBST</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <OutputFile>../lib/$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);../;../expat/include;../openssl/include;../libidn-1.24/include;../pthreads</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);HAVE_CONFIG_H;HAVE_WINSOCK2_H;HAVE_INET_NTOP;_USE_32BIT_TIME_T;USE_LIBSUBST</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>ssleay32.lib;libeay32.lib</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="access.c" />
+    <ClCompile Include="avl.c" />
+    <ClCompile Include="base64.c" />
+    <ClCompile Include="config.c" />
+    <ClCompile Include="datetime.c" />
+    <ClCompile Include="filemap.c" />
+    <ClCompile Include="hex.c" />
+    <ClCompile Include="inaddr.c" />
+    <ClCompile Include="jid.c" />
+    <ClCompile Include="jqueue.c" />
+    <ClCompile Include="jsignal.c" />
+    <ClCompile Include="jsqueue.c" />
+    <ClCompile Include="log.c" />
+    <ClCompile Include="md5.c" />
+    <ClCompile Include="mempool.c" />
+    <ClCompile Include="nad.c" />
+    <ClCompile Include="pool.c" />
+    <ClCompile Include="rate.c" />
+    <ClCompile Include="serial.c" />
+    <ClCompile Include="stanza.c" />
+    <ClCompile Include="str.c" />
+    <ClCompile Include="xdata.c" />
+    <ClCompile Include="xhash.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="avl.h" />
+    <ClInclude Include="inaddr.h" />
+    <ClInclude Include="jid.h" />
+    <ClInclude Include="md5.h" />
+    <ClInclude Include="mempool.h" />
+    <ClInclude Include="nad.h" />
+    <ClInclude Include="pool.h" />
+    <ClInclude Include="sha1.h" />
+    <ClInclude Include="uri.h" />
+    <ClInclude Include="util.h" />
+    <ClInclude Include="util_compat.h" />
+    <ClInclude Include="xdata.h" />
+    <ClInclude Include="xhash.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

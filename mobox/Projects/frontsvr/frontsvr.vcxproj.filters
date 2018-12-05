@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="buffer.c" />
+    <ClCompile Include="client.c" />
+    <ClCompile Include="dbaccess.c" />
+    <ClCompile Include="expat.c" />
+    <ClCompile Include="globaldata.c" />
+    <ClCompile Include="grouprslt.c" />
+    <ClCompile Include="json\cJSON.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="myquery\mysqldb.c" />
+    <ClCompile Include="p2p.c" />
+    <ClCompile Include="p2pclient.c" />
+    <ClCompile Include="protobuffer.c" />
+    <ClCompile Include="rediscommand.c" />
+    <ClCompile Include="responsepkt.c" />
+    <ClCompile Include="responser.c" />
+    <ClCompile Include="tool.c" />
+    <ClCompile Include="opensess_exp.c" />
+    <ClCompile Include="subject.c" />
+    <ClCompile Include="userstatus.c" />
+    <ClCompile Include="warnsvr_callback.c" />
+    <ClCompile Include="warnsvr_expat.c" />
+    <ClCompile Include="bdsvr_callback.c" />
+    <ClCompile Include="bdsvr_expat.c" />
+    <ClCompile Include="monitor_callback.c" />
+    <ClCompile Include="monitor_expat.c" />
+    <ClCompile Include="forward.c" />
+    <ClCompile Include="json_string.c" />
+    <ClCompile Include="getrefsvr.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\ConnectionInterface.h" />
+    <ClInclude Include="buffer.h" />
+    <ClInclude Include="client.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="dbaccess.h" />
+    <ClInclude Include="expat.h" />
+    <ClInclude Include="globaldata.h" />
+    <ClInclude Include="grouprslt.h" />
+    <ClInclude Include="hiredis.h" />
+    <ClInclude Include="json\cJSON.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="myquery\mysqldb.h" />
+    <ClInclude Include="mysqldb.h" />
+    <ClInclude Include="p2p.h" />
+    <ClInclude Include="p2pclient.h" />
+    <ClInclude Include="protobuffer.h" />
+    <ClInclude Include="rediscommand.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="responsepkt.h" />
+    <ClInclude Include="responser.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="tool.h" />
+    <ClInclude Include="opensess_exp.h" />
+    <ClInclude Include="subject.h" />
+    <ClInclude Include="userstatus.h" />
+    <ClInclude Include="warnsvr_callback.h" />
+    <ClInclude Include="warnsvr_expat.h" />
+    <ClInclude Include="bdsvr_callback.h" />
+    <ClInclude Include="bdsvr_expat.h" />
+    <ClInclude Include="monitor_callback.h" />
+    <ClInclude Include="monitor_expat.h" />
+    <ClInclude Include="forward.h" />
+    <ClInclude Include="json_string.h" />
+    <ClInclude Include="getrefsvr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

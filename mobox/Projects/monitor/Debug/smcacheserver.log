@@ -1,0 +1,53 @@
+﻿生成启动时间为 5/10/2018 2:18:18 PM。
+     1>项目“E:\林业巡检\工程\smplatform\smcachesvr\smcacheserver.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(364,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D HAVE_CONFIG_H /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt router_expat.c
+         router_expat.c
+     1>e:\林业巡检\工程\smplatform\jabber\util\inaddr.h(72): warning C4005: “SOCKET_ERROR”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(392) : 参见“SOCKET_ERROR”的前一个定义
+     1>e:\林业巡检\工程\smplatform\win32_interop\win32_types_hiredis.h(44): warning C4142: 类型的良性重定义
+     1>e:\林业巡检\工程\smplatform\smcachesvr\router_expat.c(18): warning C4005: “NULL”: 宏重定义
+                 d:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(36) : 参见“NULL”的前一个定义
+     1>e:\林业巡检\工程\smplatform\smcachesvr\router_expat.c(297): warning C4101: “szvalue”: 未引用的局部变量
+     1>e:\林业巡检\工程\smplatform\smcachesvr\router_expat.c(326): warning C4101: “user”: 未引用的局部变量
+     1>e:\林业巡检\工程\smplatform\smcachesvr\router_expat.c(391): warning C4013: “logger”未定义；假设外部返回 int
+     1>e:\林业巡检\工程\smplatform\smcachesvr\router_expat.c(391): warning C4047: “函数”:“log_t”与“int”的间接级别不同
+     1>e:\林业巡检\工程\smplatform\smcachesvr\router_expat.c(391): warning C4024: “log_write”: 形参和实参 1 的类型不同
+     1>e:\林业巡检\工程\smplatform\smcachesvr\router_expat.c(383): warning C4101: “content”: 未引用的局部变量
+     1>e:\林业巡检\工程\smplatform\smcachesvr\router_expat.c(637): warning C4101: “time”: 未引用的局部变量
+     1>e:\林业巡检\工程\smplatform\smcachesvr\router_expat.c(720): warning C4101: “time”: 未引用的局部变量
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../bin\smcacheserver.exe" /INCREMENTAL /NOLOGO util.lib mio.lib subst.lib libeay32.lib pthreads.lib hiredis.lib Win32_Interop.lib libmysql.lib kernel32.lib user32.lib gdi32.lib winspool.lib advapi32.lib shell32.lib uuid.lib WS2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:LIBCMTD.lib /MANIFEST:NO /DEBUG /PDB:"../bin\smcacheserver.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../bin\smcacheserver.lib" /MACHINE:X86 Debug\aes.obj
+         Debug\backexpat.obj
+         Debug\base64.obj
+         Debug\bdexpat.obj
+         Debug\buffer.obj
+         Debug\client.obj
+         Debug\dbaccess.obj
+         Debug\opensess_exp.obj
+         Debug\rptqueue.obj
+         Debug\router_expat.obj
+         Debug\routermsgcallback.obj
+         Debug\expat.obj
+         Debug\globaldata.obj
+         Debug\grouprslt.obj
+         Debug\cJSON.obj
+         Debug\main.obj
+         Debug\mysqldb.obj
+         Debug\p2p.obj
+         Debug\p2pclient.obj
+         Debug\protobuffer.obj
+         Debug\rediscommand.obj
+         Debug\responsepkt.obj
+         Debug\responser.obj
+         Debug\tool.obj
+         Debug\subject.obj
+         Debug\town_expat.obj
+         Debug\userstatus.obj
+         smcacheserver.vcxproj -> E:\林业巡检\工程\smplatform\smcachesvr\../bin\smcacheserver.exe
+     1>已完成生成项目“E:\林业巡检\工程\smplatform\smcachesvr\smcacheserver.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.44
