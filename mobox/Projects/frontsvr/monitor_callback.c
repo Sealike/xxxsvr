@@ -371,9 +371,14 @@ void  monitor_exp_cb(int msgid, void* msg, int len, void* param)
 	{
 		log_write(client()->log, LOG_NOTICE, "recv config from %s.", sess->sname);
 
+
 		forward_to_app("remoteunlock", jstr);	// 传给箱子后,箱子直接打开,然后生成remoteunlock类型的日志
 
 		//  生成日志,存储,并回传给客户端
+
+		forward_to_app("remoteunlock", jstr);				// 传给箱子后,箱子直接打开
+		forward_log_x_to_monitor("remoteunlock", jstr);		// 生成相应日志,入库并发送回管理客户端
+
 	}
 	break;
 
@@ -381,9 +386,14 @@ void  monitor_exp_cb(int msgid, void* msg, int len, void* param)
 	{
 		log_write(client()->log, LOG_NOTICE, "recv config from %s.", sess->sname);
 
+
 		forward_to_app("rptctrl", jstr);
 
 		// 生成日志,存储,并回传给客户端
+
+		forward_to_app("rptctrl", jstr);	
+		forward_log_x_to_monitor("rptctrl", jstr);		// 生成相应日志,入库并发送回管理客户端
+
 	}
 	break;
 
